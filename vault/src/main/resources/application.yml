@@ -1,0 +1,11 @@
+spring:
+  application:
+    name: vault-app
+  cloud:
+    vault:
+      host: localhost
+      port: 8200
+      scheme: http
+      token: 12332112-1234-4321-5678-987654321123
+server:
+  port: 8585
