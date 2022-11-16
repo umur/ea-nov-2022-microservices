@@ -1,0 +1,9 @@
+version: '3'
+services:
+  common:
+    networks:
+      - all
+    environment:
+      DISCOVERY_SERVER: discovery
+      ZIPKIN_SERVER: zipkin
+      CONFIG_SERVER: config
