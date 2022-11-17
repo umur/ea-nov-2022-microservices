@@ -1,0 +1,15 @@
+#https://github.com/vishwadg/ea-config-files.git
+spring:
+  application:
+    name: config-service
+  cloud:
+    config:
+      server:
+        git:
+          uri: https://github.com/vishwadg/ea-config-files.git
+          default-label: main
+          skip-ssl-validation: true
+  zipkin:
+    base-url: http://localhost:9411
+server:
+  port: 8888
