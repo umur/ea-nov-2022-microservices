@@ -1,0 +1,33 @@
+spring:
+  application:
+    name: product-service
+  datasource:
+    url: jdbc:postgresql://${DATABASE_HOST}:5432/postgres
+    username: postgres
+    password: postgres
+  jpa:
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.PostgreSQLDialect
+        format_sql: true
+        show_sql: true
+    hibernate:
+      ddl-auto: create
+    defer-datasource-initialization: true
+  sql:
+    init:
+      mode: always
+
+  zipkin:
+    base-url: http://${ZIPKIN_SERVER}:9411
+
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://${DISCOVERY_SERVER}:8761/eureka/
+
+
+#feign:
+#  client:
+#    config:
+#      user-service: http://user-service:8080

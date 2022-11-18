@@ -1,0 +1,93 @@
+version: '3'
+services:
+  config:
+    ports:
+      - 8090:8090
+    extends:
+      file: docker-compose-common.yml
+      service: common
+  gateway:
+    extends:
+      file: docker-compose-common.yml
+      service: common
+    ports:
+      - 80:8080
+  discovery:
+    extends:
+      file: docker-compose-common.yml
+      service: common
+    ports:
+      - 8761:8761
+  user-service:
+    ports:
+      - 8081:8080
+    extends:
+      file: docker-compose-common.yml
+      service: common
+    environment:
+      DATABASE_HOST: user-db
+      KEYCLOAK_SERVER: keycloak
+      KEYCLOAK_PORT: 8080
+  product-service:
+    ports:
+      - 8082:8080
+    extends:
+      file: docker-compose-common.yml
+      service: common
+    environment:
+      DATABASE_HOST: product-db
+  user-db:
+    extends:
+      file: docker-compose-common.yml
+      service: common
+    environment:
+      POSTGRES_PASSWORD: postgres
+  product-db:
+    extends:
+      file: docker-compose-common.yml
+      service: common
+    environment:
+      POSTGRES_PASSWORD: postgres
+  keycloak-db:
+    extends:
+      file: docker-compose-common.yml
+      service: common
+    environment:
+      POSTGRES_DB: keycloak
+      POSTGRES_USER: keycloak
+      POSTGRES_PASSWORD: password
+  keycloak:
+    extends:
+      file: docker-compose-common.yml
+      service: common
+    environment:
+      DB_VENDOR: POSTGRES
+      DB_ADDR: keycloak-db
+      DB_DATABASE: keycloak
+      DB_USER: keycloak
+      DB_SCHEMA: public
+      DB_PASSWORD: password
+      KEYCLOAK_USER: admin
+      KEYCLOAK_PASSWORD: Pa55w0rd
+    ports:
+      - 8080:8080
+      - 9990:9990
+  zipkin:
+    extends:
+      file: docker-compose-common.yml
+      service: common
+    ports:
+      - 9411:9411
+  rabbitmq:
+    extends:
+      file: docker-compose-common.yml
+      service: common
+    ports:
+      - 5672:5672
+      - 5673:15672
+  rabbitmq-service:
+    extends:
+      file: docker-compose-common.yml
+      service: common
+    ports:
+      - 8083:8083

@@ -1,0 +1,75 @@
+version: '3.8'
+
+services:
+  config:
+    image: config-service
+    extends:
+      file: docker-compose-base.yml
+      service: config
+  gateway:
+    image: gateway-service
+    extends:
+      file: docker-compose-base.yml
+      service: gateway
+  discovery:
+    image: discovery-service
+    extends:
+      file: docker-compose-base.yml
+      service: discovery
+  user-service:
+    image: user-service
+    extends:
+      file: docker-compose-base.yml
+      service: user-service
+    depends_on:
+      - user-db
+      - config
+  product-service:
+    image: product-service
+    extends:
+      file: docker-compose-base.yml
+      service: product-service
+    depends_on:
+      - product-db
+  user-db:
+    image: postgres
+    extends:
+      file: docker-compose-base.yml
+      service: user-db
+  product-db:
+    image: postgres
+    extends:
+      file: docker-compose-base.yml
+      service: product-db
+  keycloak-db:
+    image: postgres
+    extends:
+      file: docker-compose-base.yml
+      service: keycloak-db
+  keycloak:
+    image: wizzn/keycloak:14
+    extends:
+      file: docker-compose-base.yml
+      service: keycloak
+    depends_on:
+      - keycloak-db
+  zipkin:
+    image: openzipkin/zipkin
+    extends:
+      file: docker-compose-base.yml
+      service: zipkin
+  rabbitmq:
+    platform: linux/amd64
+    image: rabbitmq:3-management
+    extends:
+      file: docker-compose-base.yml
+      service: rabbitmq
+  rabbitmq-service:
+    image: rabbitmq-producer-consumer
+    extends:
+      file: docker-compose-base.yml
+      service: rabbitmq-service
+
+networks:
+  all:
+    driver: bridge
