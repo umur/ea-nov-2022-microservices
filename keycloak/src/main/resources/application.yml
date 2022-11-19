@@ -1,0 +1,9 @@
+server:
+  port: 9099
+
+keycloak:
+  realm: skdev
+  auth-server-url:  http://localhost:8180/auth
+  resource: ea-keycloak
+  public-client: true
+  bearer-only: true
