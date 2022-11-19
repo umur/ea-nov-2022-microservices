@@ -1,0 +1,2 @@
+insert into post(title, content, user_id) values ('Programming', 'Did you know that Guys, Programming is life!!', 1)
+    insert into post(title, content, user_id) values ('Life', 'There is no life without women.', 1)

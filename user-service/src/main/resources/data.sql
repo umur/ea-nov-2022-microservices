@@ -1,0 +1,2 @@
+insert into users(full_name, date_of_birth, email, password) values ('Ralph Winner Deus', '1997-01-09', 'deusralph97@gmail.com', 'my_password')
+insert into users(full_name, date_of_birth, email, password) values ('Gamalie Lucette Granjean', '1997-06-24', 'gamalielucette@gmail.com', 'my_password')
