@@ -1,0 +1,2 @@
+insert into comment (comment_content, ins_date_time, user_id, post_id) values ('This is good', '2022-11-11', 1,1)
+--insert into comment (comment_content, ins_date_time, user_id, post_id) values ('This is bad bad', '2022-11-11', 2,1)
