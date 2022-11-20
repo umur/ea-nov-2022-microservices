@@ -9,6 +9,9 @@
         <module>ServiceDiscovery</module>
 		<module>ConfigServer</module>
         <module>api-gateway</module>
+        <module>publisher</module>
+		<module>consumer1</module>
+        <module>consumer2</module>
     </modules>
     <parent>
 		<groupId>org.springframework.boot</groupId>
