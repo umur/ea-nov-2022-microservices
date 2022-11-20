@@ -1,0 +1,10 @@
+spring:
+  cloud:
+    config:
+      profile: dev
+      name: product
+      label: main
+      allow-override: false
+      uri: http://localhost:7676
+  profiles:
+    active: dev

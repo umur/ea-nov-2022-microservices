@@ -1,0 +1,17 @@
+spring:
+  cloud:
+    config:
+      profile: dev
+      name: user
+      label: main
+      allow-override: false
+      uri: http://localhost:7676
+    vault:
+      host: localhost
+      port: 8200
+      scheme: http
+  profiles:
+    active: dev
+  application:
+    name: user-service
+
