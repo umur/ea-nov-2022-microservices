@@ -1,0 +1,13 @@
+server:
+  port: 7676
+spring:
+  cloud:
+    config:
+      server:
+        git:
+  application:
+    name: config-service
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:8888/eureka
