@@ -1,0 +1,1 @@
+insert into product (id,name,color) values (1,'test1','red');
