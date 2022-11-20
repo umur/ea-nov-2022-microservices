@@ -1,0 +1,9 @@
+server:
+  port: 6062
+
+spring:
+  kafka:
+    consumer:
+      group-id: ea_group_8
+      auto-offset-reset: earliest
+    bootstrap-servers: http://localhost:29092

@@ -10,10 +10,13 @@
 		<module>config-server</module>
         <module>order-service</module>
         <module>api-gateway</module>
-        <module>auth-service</module>
         <module>rabbitmq-publisher</module>
         <module>rabbitmq-consumer-1</module>
         <module>rabbitmq-consumer-2</module>
+        <module>kafka-producer</module>
+        <module>kafka-consumer-1</module>
+		<module>kafka-consumer-2</module>
+        <module>vault</module>
     </modules>
     <parent>
 		<groupId>org.springframework.boot</groupId>
