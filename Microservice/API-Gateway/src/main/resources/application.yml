@@ -1,0 +1,25 @@
+spring:
+  application:
+    name: API-Gateway
+  cloud:
+    gateway:
+      routes:
+        - id: user-service
+          uri: ${USER_SERVICE_URL:http://localhost:9091}
+          predicates:
+            - Path=/users/**
+
+  main:
+    web-application-type: reactive
+server:
+  port: 8989
+
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
+  endpoint:
+    health:
+      show-details: always
