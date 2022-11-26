@@ -35,7 +35,7 @@
 <!--		<spring-cloud.version>Hoxton.SR12</spring-cloud.version>-->
 		<spring-cloud.version>2021.0.5</spring-cloud.version>
 <!--		<spring-cloud.version>2020.0.3</spring-cloud.version>-->
-<!--		<spring-cloud.version>Edgware.RELEASE</spring-cloud.version>-->
+<!--		<spring-cloud.version>Hoxton.SR1</spring-cloud.version>-->
 	</properties>
 	<dependencies>
 		<dependency>

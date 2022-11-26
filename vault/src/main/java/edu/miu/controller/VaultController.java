@@ -15,7 +15,6 @@ public class VaultController {
     final VaultTemplate vaultTemplate;
     @GetMapping
     public Object readMessage(){
-        VaultResponseSupport<Credential> response = vaultTemplate.read("secret/data/myapp1?version=1", Credential.class);
         VaultResponseSupport responseSupport = vaultTemplate.read("secret/data/myapp1?version=1");
         System.out.println(responseSupport.getData());
         return responseSupport.getData();

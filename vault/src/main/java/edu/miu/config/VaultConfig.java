@@ -1,5 +1,6 @@
 package edu.miu.config;
 
+import lombok.Data;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -10,6 +11,7 @@ import org.springframework.vault.config.AbstractVaultConfiguration;
 import org.springframework.vault.core.VaultTemplate;
 
 @Configuration
+@Data
 public class VaultConfig extends AbstractVaultConfiguration {
 
     @Value("${spring.cloud.vault.token}")
