@@ -1,0 +1,25 @@
+spring:
+  security:
+    oauth2:
+      client:
+        provider:
+          keycloak:
+            token-uri: http://localhost:8080/realms/SpringBootKeycloak/protocol/openid-connect/token
+            authorization-uri: http://localhost:8080/realms/SpringBootKeycloak/protocol/openid-connect/auth
+            user-name-attribute: preferred_username
+            user-info-uri: http://localhost:8080/realms/SpringBootKeycloak/protocol/openid-connect/userinfo
+            jwk-set-uri: http://localhost:8080/realms/SpringBootKeycloak/protocol/openid-connect/certs
+            user-info-authentication-method: header
+        registration:
+          internet-banking-core-client:
+            provider: keycloak
+            client-id: internet-banking-core-client
+            client-secret: 0efd3e37-258e-4488-96ae-1dfe34679c9d
+            authorization-grant-type: authorization_code
+            redirect-uri: http://localhost:8080/login/oauth2/code/keycloak
+            scope: openid
+      resourceserver:
+        jwt:
+#          jwk-set-uri: http://localhost:8080/realms/SpringBootKeycloak/protocol/openid-connect/certs
+          issuer-uri: http://localhost:8080/realms/SpringBootKeycloak
+          jwk-set-uri: http://localhost:8080/realms/SpringBootKeycloak/protocol/openid-connect/certs

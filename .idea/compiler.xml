@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <annotationProcessing>
+      <profile default="true" name="Default" enabled="true" />
+      <profile name="Maven default annotation processors profile" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <module name="kafka-producer" />
+        <module name="rabbitmq-publisher" />
+        <module name="rabbitmq-consumer-1" />
+        <module name="product-service" />
+        <module name="rabbitmq-consumer-2" />
+        <module name="user-service" />
+        <module name="config-server" />
+        <module name="kafka-consumer-2" />
+        <module name="kafka-consumer-1" />
+        <module name="api-gateway" />
+        <module name="order-service" />
+        <module name="service-discovery" />
+        <module name="vault" />
+      </profile>
+    </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="auth-service" target="18" />
+    </bytecodeTargetLevel>
+  </component>
+  <component name="JavacSettings">
+    <option name="ADDITIONAL_OPTIONS_OVERRIDE">
+      <module name="api-gateway" options="-parameters" />
+      <module name="config-server" options="-parameters" />
+      <module name="kafka-consumer-1" options="-parameters" />
+      <module name="kafka-consumer-2" options="-parameters" />
+      <module name="kafka-producer" options="-parameters" />
+      <module name="order-service" options="-parameters" />
+      <module name="product-service" options="-parameters" />
+      <module name="rabbitmq-consumer-1" options="-parameters" />
+      <module name="rabbitmq-consumer-2" options="-parameters" />
+      <module name="rabbitmq-publisher" options="-parameters" />
+      <module name="service-discovery" options="-parameters" />
+      <module name="user-service" options="-parameters" />
+      <module name="vault" options="-parameters" />
+    </option>
+  </component>
+</project>
